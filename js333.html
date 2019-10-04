@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#capa  {
+			width: 200px;
+			height: 200px;
+			background-color: grey;
+		}
+		select option[value="yellow"] {background-color: yellow;}
+		select option[value="green"] {background-color: green;}
+		select option[value="blue"] {background-color: blue;}			
+}
+
+	</style>
+	<script type="text/javascript">
+		window.onload = function() {
+			//activar un listener sobre todo el documento
+			document.getElementById('combo').addEventListener('change', function () {onchangef(this)});
+		}	
+		function onchangef(event) {
+			//selecciona el value
+			//var combo = document.getElementById('combo').value;
+			var combo = document.getElementById('combo');
+			var capa = document.getElementById('capa');
+			capa.style.backgroundColor = combo.value;
+			//valido cuando usamos la opcion .value
+			//document.getElementById('capa').style.backgroundColor = combo;
+		}
+	</script>
+</head>
+<body>
+	<div id="capa"></div>
+	<select id="combo" name="combo"  required>
+									<option disabled selected>Seleccione color</option>
+					  				<option value='yellow'>Amarillo</option>
+					  				<option value='green'>Verde</option>
+					  				<option value='blue'>Azul</option>			  				
+		 	</select>
+</body>
+</html>
